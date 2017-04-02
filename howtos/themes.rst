@@ -1,41 +1,41 @@
 :banner: banners/build_a_theme.jpg
 
-=====================
+==============
 Theme Tutorial
-=====================
+==============
 
 .. rst-class:: lead
 
 Odoo celebrates freedom. Freedom for the designer to go further and
 freedom for the user to customize everything according to their needs.
 
-Ready to create your own theme? Great. Here are some things you should know before you begin. This tutorial is a guide to creating an Odoo theme.
+¿Listo para crear sus propios temas? Perfecto. Aquí encontrara varios conceptos que deberá conocer antes de empezar. Este tutorial es una guia para crear temas en Odoo.
 
 .. image:: theme_tutorial_assets/img/Intro.jpg
 
 
-An introduction for web designers
-=================================
+Introducción para los diseñadores web
+=====================================
 
-If you are a web designer using Odoo for the first time, you are in the right place.
-This introduction will outline the basics of Odoo theme creation.
+Si eres un diseñador web que usa Odoo por primera vez, estás en el lugar correcto.
+Esta introducción le introducirá en los fundamentos de la creación de temas en Odoo.
 
 .. note::
 
-   Odoo’s team has created a framework that’s powerful and easy to use. There’s no need to know special syntaxes to use this set of tools.
+   El equipo de Odoo ha creado un potente framework facil de usar. No necesita conocer códigos especiales para utilizar este conjunto de herramientas.
 
 From common CMS to Odoo
 -----------------------
 
 .. note::
 
-   If you always think and work in the same way, you’ll probably get the same results. If you want something completely new,  then try something different.
+   Si siempre ha trabajado y pensado de la misma manera, probablemente haya tenido los mismos resultados. Si buscas algo completamente nuevo, entonces intenta algo diferente.
 
 ..
 
-    Where is my header.php file?
+    ¿Dónde está mi archivo header.php?
 
-This is usually the first question from a web designer used to working with Wordpress or Joomla and coming to Odoo for the first time.
+Esta es la primera pregunta que hace un diseñador web acostumbrado a  trabajar con Wordpress o Joomla y comienza a usar Odoo por primera vez.
 
 .. container:: col-sm-4
 
@@ -43,18 +43,18 @@ This is usually the first question from a web designer used to working with Word
 
 .. container:: col-sm-7
 
-  Indeed, when using common CMSs, you have to code several files (like header.php, page.php, post.php, etc.) in order to create a basic structure for your website. With those systems, this base structure acts as a design foundation that you have to update over time to ensure compatibility within your CMS. So, even after you have spent hours coding the files, you have not even started on the design yet.
+  Cuando usa los CMS comunes necesita programar varios archivos (como header.php, page.php, post.php, etc.) para crear una estructura básica de su website. Con esos sistemas, esa estructura básica actua como fundamento base y hace que tenga que actualizarse habitualmente para garantizar la compatibilidad con su CMS. Por tanto, después de haber pasado horas programando los archivos, ni siquiera habrá comenzado con el diseño.
 
-  This **does not** apply to creating Odoo themes.
+  Esto **NO** sucede creando temas en Odoo..
 
 
 .. note::
    :class: col-sm-12
 
-   We think that theme design should be simple (and powerful). When we created our Website Builder, we decided to start from scratch instead of relying on what already existed. This approach gave us the freedom to focus on the things that are really important for designers: styles, content and the logic behind them. No more struggling with technical stuff.
+   Creemos que el diseño de temas tiene que ser simple (y potente). Cuando creamos nuestro Website Builder, decidimos empezar desde cero en lugar de confiar en lo que ya existía. Este enfoque nos dió la libertad de focalizarnos en las cosas que eran realmente importante para los diseñadores: estilos, contenido y la lógica detrás de ellos. No más luchas con  materias técnicas.
 
-Odoo default theme structure
-----------------------------
+La estructura de un tema por defecto en Odoo
+--------------------------------------------
 
 .. container:: col-sm-8
 
@@ -63,7 +63,7 @@ Odoo default theme structure
   Indeed it’s always enabled in your setup and it acts exactly like the CMS’s base structure we mentioned above, except that you don’t have to create or maintain it.
   It will upgrade automatically within your Odoo installation and, since it is included in the Website Builder module, everything is smoothly integrated by default.
 
-  As a result, you are totally free to focus on design while this structure does the job of providing integrations and functionality.
+  Como resultado, usted es libre de focalizarse en el diseño mientras esta estructura hace el trabajo de proporcionar la integración y funcionalidad.
 
 .. container:: col-sm-4
 
@@ -88,36 +88,36 @@ Odoo default theme structure
    * jQuery UI
    * underscore.js
 
-Thinking "modular"
-==================
+Pensando en "modular"
+=====================
 
-An Odoo theme is not a folder containing HTML or PHP files, it’s a modular framework written in XML. Never worked with XML files before? Don’t worry, after following the tutorial, you’ll be able to create your first theme with only basic knowledge of HTML.
+Un tema de Odoo no es una carpeta que contiene archivos HTML o PHP, es un framework modular escrito en XML. ¿Nunca has trabajado con archivos XML? No se preocupe, despues de seguir este tutorial, será capaz de crear su primer tema con un conocimiento básico de HTML.
 
-Using classical web design workflows, you usually code the layout of the entire page. The result of this is a “static” web page. You can update the content, of course, but your client will need you to work on making even basic changes.
+Usando los clásicos flujos de trabajo del diseño web, normalmente programará el diseño de toda la página. El resultado será una página “estatica”. Puede actualizar el contenido, por supuesto, pero su cliente le necesitará cada vez  que tenga que hacer hasta los cambios mas básicos.
 
-Creating themes for Odoo is a total change of perspective. Instead of defining the complete layout for a page, you can create blocks (snippets) at let the user choose where to “drag&drop” them, creating the page layout on their own.
-We call this modular design.
+Crear temas con Odoo es un cambio total de perspectiva. En lugar de definir el diseño completo de toda la página, usted puede crear bloques (snippets) y dejar al usuario elegir donde arrastrarlos “drag&drop”, creando su propio diseño de página.
+Lo llamamos diseño modular.
 
-Imagine an Odoo theme as a “list” of elements and options that you have to create and style.
-As a designer, your goal is to style these elements in order to achieve a wonderful result, regardless of where the end user chooses to place them.
+Imagine un tema Odoo como una “lista” de elementos y opciones of elements and options que usted puede crear y darle estilos.
+Como diseñador, su meta es dar estilo a esos elementos con el fin de lograr resultados maravillosos, independientemente de donde el usuario decida colocarlos.
 
-Let’s take a tour of our “list” elements:
+Hagamos un recorrido por nuesta “lista” de elementos:
 
 .. row
 
 .. figure:: theme_tutorial_assets/img/snippet.jpg
    :figclass: col-sm-6
 
-   Snippets (or building-blocks)
+   Snippets (constructor de bloques)
 
-   A piece of HTML code.  The user  will  drag&drop, modify and combine them using our built-in Website Builder interface. You can define sets of options and styles for each snippet. The user will choose from them according to their needs.
+   Una porción de código HTML.  El usuario puede arrastrarlo y soltarlo, modificarlo y combinarlo usando nuestra interface Website Builder incorporada. Podrá definir variedad de opciones y estilos para cada snippet. El usuario elegirá el que decida más adecuado para sus necesidades.
 
 .. figure:: theme_tutorial_assets/img/page.jpg
    :figclass: col-sm-6
 
-   Pages
+   Pages (páginas)
 
-   These are normal web pages, except that they will be editable by the final user and that you can define an empty area that the user can “fill” by dragging snippets into it.
+   Son páginas webs normales, excepto por que pueden ser editadas por el usuario final y podrá definir un area vacia que el usuario puede “rellenar” arranstrando snippets dentro de ella.
 
 .. /row
 .. raw:: html
@@ -127,24 +127,24 @@ Let’s take a tour of our “list” elements:
 .. figure:: theme_tutorial_assets/img/styles.jpg
    :figclass: col-sm-6
 
-   Styles
+   Styles (estilos)
 
-   Styles are defined using standard CSS files (or Less/Sass). You can define a style as **default** or **optional**. The default styles are always active in your theme, the optional styles can be enabled or disabled by the user.
+   Los estilos son definidos utilizando archivos CSS estandar (o Less/Sass). Puede definir un estilo como **por defecto** o **opcional**. El estilo por defecto estará siempre activo en su tema, el estilo opcional puede ser activado o desactivado por el usuario.
 
 .. figure:: theme_tutorial_assets/img/functionalities.jpg
    :figclass: col-sm-6
 
-   Functionalities
+   Functionalities (funcionalidades)
 
-   Thanks to Odoo’s modularity, everything can be personalized even more. This means there are endless possibilities for your creativity. Adding functionalities is easy and it’s simple to provide the end user with customizable options.
+   Gracias a la modularidad de Odoo, todo puede ser personalizado aún más. Esto significa que tiene posibilidades infinitas dentro de su creatividad. Añadir funcionalidades es muy facil y proporcionan al usuario final opciones personalizables de forma sencilla.
 
 .. /row
 
 Odoo's XML files, an overview
 -----------------------------
 
-Any Odoo XML file starts with encoding specifications.
-After that, you have to write your code inside a ``<data>`` tag, placed into an ``</odoo>`` tag.
+Cualquier archivo XML en Odoo comienza con las especificaciones de "encoding".
+Después de esto, puede comenzar a escribir su código dentro de las etiquetas ``<data>`` , que se encuentra entre las etiquetas ``</odoo>``.
 
 .. code-block:: xml
 
@@ -156,7 +156,7 @@ After that, you have to write your code inside a ``<data>`` tag, placed into an 
      </data>
    </odoo>
 
-Almost every element and option that you create has to be placed inside a ``<template>`` tag, like in this example.
+Casi todos los elementos y opciones que usted vaya a crear deberán de colocarse dentro de la etiqueta ``<template>`` , como muestra el siguiente ejemplo.
 
 .. code-block:: xml
 
@@ -168,19 +168,14 @@ Almost every element and option that you create has to be placed inside a ``<tem
 
 .. important::
 
-   don't misunderstand what ``template`` means. A template tag only
-   defines a piece of html code or options - but it does not
-   necessarily coincide with a visual arrangement of elements.
+   no entienda mal el significado de ``template`` . Una etiqueta template solo define una parte de código html u opciones - pero no necesariamente coincide con una disposición visual de los elementos.
 
-The previous code defines a title, but it will not be displayed
-anywhere because that *template* is not associated with any part of
-the **Odoo default structure**.  In order to do that you can use
-**xpath**, **qWeb** or a combination of both.
+El código anterior define un título, pero no es visualizado en ninguna parte porque *template* no está asociado con ninguna parte en la **estructura por defecto de Odoo**.  Para que pueda hacer eso debe usar **xpath**, **qWeb** o una combinación de ambos.
 
-Keep reading the tutorial to learn to how properly extend it with your own code.
+Continue leyendo el tutorial para aprender como utilizarlo correctamente en su código.
 
-Update your theme
------------------
+Actualizando su tema
+--------------------
 
 .. container:: col-sm-6
 
@@ -197,42 +192,34 @@ Update your theme
 
 
 Create a theme module
-======================
+=====================
 
-Odoo’s themes are packaged like modules. Even if you are designing a very simple website for your company or client, you need to package the theme like an Odoo module.
+Los temas de Odoo son empaquetados como módulos. Aunque esté haciendo un diseño muy simple de una web para una empresa o cliente, tendrá que empaquetar el tema como un módulo de Odoo.
 
 ``main folder``
-  Create a folder and name it like this: ``theme_`` followed by your
-  theme's name.
+  Cree una carpeta llamada: ``theme_`` seguido del nombre de su tema.
 
 ``__manifest__.py``
-  Create an empty document and save it to your folder as
-  ``__manifest__.py``. This will contain the configuration info for
-  your theme.
+  Cree un archivo vacio y guardelo en su carpeta con el nombre ``__manifest__.py``. El archivo contendrá la información de configuración de su tema.
 
 ``__init__.py``
-  Create another empty file and name it ``__init__.py``. It's a
-  mandatory system file. Create and leave it blank.
+  Cree otro archivo vacio llamado ``__init__.py``. Será un archivo de sistema obligatorio. Creelo y déjelo vacio.
 
-``views`` and ``static`` folders
-  Create them in the main folder. In ``views`` you'll place your xml
-  files that define your snippets, your pages and your
-  options. ``static`` folder is the right place for your style ,
-  images and custom js code.
+carpetas ``views`` y ``static``
+  Creelas en la carpeta principal. La carpeta ``views`` contendrá los archivos xml que definirán sus snippets, páginas y opciones. La carpeta ``static`` será donde colocará sus archivos de estilo, imágenes y código js (javascript).
 
-.. important::
+.. importante::
 
-  Use two underscore characters at the beginning
-  and two at the end of odoo and init file names.
+  Use dos guiones bajos al inicio y al final en los nombres de los archivos init y manifest.
 
-The final result should be something like this:
+El resultado final será algo como esto:
 
 .. image:: theme_tutorial_assets/img/folder.jpg
 
-Edit ``__manifest__.py``
-------------------------
+Editando ``__manifest__.py``
+--------------------------
 
-Open the ``__manifest__.py`` you created and copy/paste the following:
+Abra el archivo ``__manifest__.py`` que había creado, copia y pega el siguiente código:
 
 .. code-block:: python
 
@@ -268,15 +255,15 @@ The ``data`` property will contain the xml files list. Right now it’s empty, b
 
 
 
-Installing your theme
----------------------
+Instalando su tema
+------------------
 
-To install your theme, you just place your theme folder inside addons in your Odoo installation.
+Para instalar su tema, coloque la carpeta dentro de la carpeta de addons de su instalación Odoo.
 
-After that, navigate to the Settings page, look for your theme and click on the install button.
+A continuación, navegue hacia Settings page, busque su tema y pulse el botón de instalar.
 
-Structure of an Odoo page
-=========================
+Estructura de una página en Odoo
+================================
 
 An Odoo page is the visual result of a combination of 2 kind of elements, **cross-pages** and **unique**.
 By default, Odoo provides you with a **Header** and a **Footer** (cross-pages) and a unique main element that contains the content that makes your page unique.
@@ -655,7 +642,7 @@ Options allow publishers to edit a snippet’s appearance using the Website Buil
 Using Website Builder functionalities, you can create snippet options easily and automatically add them to the UI.
 
 Options group properties
--------------------------
+------------------------
 
 Options are wrapped in groups. Groups can have properties that define how the included options will interact with the user interface.
 
@@ -669,7 +656,7 @@ Options are wrapped in groups. Groups can have properties that define how the in
   Defines the list of elements that the snippet can be dropped beside.
 
 Default option methods
------------------------
+----------------------
 
 Options apply standard CSS classes to the snippet. Depending on the method that you choose, the UI will behave differently.
 
