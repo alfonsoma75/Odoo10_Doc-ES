@@ -1,12 +1,12 @@
 :banner: banners/build_a_theme.jpg
 
-==============
-Theme Tutorial
-==============
+=========================
+Tutorial para crear temas
+=========================
 
 .. rst-class:: lead
 
-Odoo celebrates freedom. Libertad para que el diseñador llegue mas allá y libertad para que el usuario pueda personalizar todo a su gusto.
+Odoo nos trae la libertad. Libertad para que el diseñador llegue mas allá y libertad para que el usuario pueda personalizar todo a su gusto.
 
 ¿Listo para crear sus propios temas? Perfecto. Aquí encontrara varios conceptos que deberá conocer antes de empezar. Este tutorial es una guia para crear temas en Odoo.
 
@@ -21,14 +21,18 @@ Esta introducción le introducirá en los fundamentos de la creación de temas e
 
 .. nota::
 
-   El equipo de Odoo ha creado un potente framework facil de usar. No necesita conocer códigos especiales para utilizar este conjunto de herramientas.
+   El equipo de Odoo ha creado un potente framework facil de usar. 
+   No necesita conocer códigos especiales para utilizar este 
+   conjunto de herramientas.
 
-From common CMS to Odoo
------------------------
+Desde el CMS común a Odoo
+-------------------------
 
 .. nota::
 
-   Si siempre ha trabajado y pensado de la misma manera, probablemente haya tenido los mismos resultados. Si buscas algo completamente nuevo, entonces intenta algo diferente.
+   Si siempre ha trabajado y pensado de la misma manera, probablemente 
+   haya tenido los mismos resultados. Si buscas algo completamente nuevo, 
+   entonces intenta algo diferente.
 
 ..
 
@@ -47,7 +51,7 @@ Esta es la primera pregunta que hace un diseñador web acostumbrado a  trabajar 
   Esto **NO** sucede creando temas en Odoo..
 
 
-.. note::
+.. nota::
    :class: col-sm-12
 
    Creemos que el diseño de temas tiene que ser simple (y potente). Cuando creamos nuestro Website Builder, decidimos empezar desde cero en lugar de confiar en lo que ya existía. Este enfoque nos dió la libertad de focalizarnos en las cosas que eran realmente importante para los diseñadores: estilos, contenido y la lógica detrás de ellos. No más luchas con  materias técnicas.
@@ -151,7 +155,7 @@ Después de esto, puede comenzar a escribir su código dentro de las etiquetas `
    <?xml version="1.0" encoding="utf-8" ?>
    <odoo>
      <data>
-       ## YOUR CODE HERE
+       ## AQUÍ SU CÓDIGO
      </data>
    </odoo>
 
@@ -161,11 +165,11 @@ Casi todos los elementos y opciones que usted vaya a crear deberán de colocarse
 
     [XML]
     <template id="my_title" name="My title">
-      <h1>This is an HTML block</h1>
-      <h2 class="lead">And this is a subtitle</h2>
+      <h1>Esto es un bloque HTML</h1>
+      <h2 class="lead">y esto es un subtítulo</h2>
     </template>
 
-.. important::
+.. importante::
 
    no entienda mal el significado de ``template`` . Una etiqueta template solo define una parte de código html u opciones - pero no necesariamente coincide con una disposición visual de los elementos.
 
@@ -190,8 +194,8 @@ Actualizando su tema
 
 
 
-Create a theme module
-=====================
+Creando el módulo de un tema
+============================
 
 Los temas de Odoo son empaquetados como módulos. Aunque esté haciendo un diseño muy simple de una web para una empresa o cliente, tendrá que empaquetar el tema como un módulo de Odoo.
 
@@ -215,6 +219,11 @@ El resultado final será algo como esto:
 
 .. image:: theme_tutorial_assets/img/folder.jpg
 
+
+.. nota::
+
+   En las versiones anteriores a la 10, el archivo __manifest__.py era denominado __openerp__.py
+    
 Editando ``__manifest__.py``
 ----------------------------
 
@@ -267,9 +276,9 @@ Estructura de una página en Odoo
 Una página Odoo es el resultado visual de una combinación de 2 tipos de elementos, **cross-pages** y **unique**.
 Por defecto, Odoo le proporciona un **Header** y un **Footer** (cross-pages) y un único elemento principal que contiene el contenido que hará su página única.
 
-.. note::
+.. nota::
 
-  los elementos Cross-pages son los mismos elementos en todas las páginas. Los elementos únicos son los que están relaccionados solamente con una página específica.
+  Los elementos Cross-pages son los mismos elementos en todas las páginas. Los elementos únicos son los que están relaccionados solamente con una página específica.
 
 .. image:: theme_tutorial_assets/img/page_structure.jpg
 
@@ -381,9 +390,9 @@ el atributo ``page`` en ``True`` y agregue su código dentro.
 
 El título de la página será el ID del template. En este caso *Services* (desde ``website.services``)
 
-Ha creado con éxito un nuevo layout de página, pero no le ha dicho al sistema
- **como debe usarlo**. Para hacer esto, podrá usar **QWeb**. Inserta el
-código html en una etiqueta ``<t>`` , como en el siguiente ejemplo.
+Ha creado con éxito un nuevo layout de página, pero no le ha dicho al sistema **como debe usarlo**.
+Para hacer esto, podrá usar **QWeb**. Inserta el código html en una etiqueta ``<t>``,
+como en el siguiente ejemplo.
 
 .. code-block:: xml
 
