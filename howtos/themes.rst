@@ -74,17 +74,17 @@ La estructura de un tema por defecto en Odoo
 
 .. container:: col-md-6
 
-   **Main features:**
+   **Características principaless:**
 
-   * Basic layouts for pages, blog and eCommerce
-   * Website Builder integration
-   * Basic Snippets
-   * Automatic Less/Sass compiling
-   * Automatic Js and CSS minification and combination
+   * Diseño básico para páginas, blog y eCommerce
+   * Integración de Website Builder
+   * Snippets básicos
+   * Compilación automática Less/Sass
+   * Compresión y combinación automática de Js y CSS
 
 .. container:: col-md-6
 
-   **Main technologies:**
+   **Principales tecnologías:**
 
    * Twitter Bootstrap
    * jQuery
@@ -336,7 +336,7 @@ código.
 El primer xpath agregará el id ``my_header`` al header. Es la mejor opción si quiere añadir
 reglas css a ese elemento sin que afecte al contenido del resto de la página.
 
-.. warning::
+.. Atención::
 
   Tenga cuidado al sustituir los atributos de los elementos por defecto. 
   tema vaya extendiendo el tema por defecto, sus cambios tendrán prioridad en futuras actualizaciones de Odoo
