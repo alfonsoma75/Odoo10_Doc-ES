@@ -6,8 +6,7 @@ Theme Tutorial
 
 .. rst-class:: lead
 
-Odoo celebrates freedom. Freedom for the designer to go further and
-freedom for the user to customize everything according to their needs.
+Odoo celebrates freedom. Libertad para que el diseñador llegue mas allá y libertad para que el usuario pueda personalizar todo a su gusto.
 
 ¿Listo para crear sus propios temas? Perfecto. Aquí encontrara varios conceptos que deberá conocer antes de empezar. Este tutorial es una guia para crear temas en Odoo.
 
@@ -20,14 +19,14 @@ Introducción para los diseñadores web
 Si eres un diseñador web que usa Odoo por primera vez, estás en el lugar correcto.
 Esta introducción le introducirá en los fundamentos de la creación de temas en Odoo.
 
-.. note::
+.. nota::
 
    El equipo de Odoo ha creado un potente framework facil de usar. No necesita conocer códigos especiales para utilizar este conjunto de herramientas.
 
 From common CMS to Odoo
 -----------------------
 
-.. note::
+.. nota::
 
    Si siempre ha trabajado y pensado de la misma manera, probablemente haya tenido los mismos resultados. Si buscas algo completamente nuevo, entonces intenta algo diferente.
 
@@ -58,8 +57,8 @@ La estructura de un tema por defecto en Odoo
 
 .. container:: col-sm-8
 
-  Odoo comes with a default theme structure.
-  It is a very basic “theme” that provides minimal structure and layout. When you create a new theme, you are actually extending this.
+  Odoo contiene una estuctura de tema por defecto.
+  Es un “tema” muy básico que contiene una mínima estructura y diseño. Cuando usted crea un nuevo tema, está extendiendo esa estructura.
   Indeed it’s always enabled in your setup and it acts exactly like the CMS’s base structure we mentioned above, except that you don’t have to create or maintain it.
   It will upgrade automatically within your Odoo installation and, since it is included in the Website Builder module, everything is smoothly integrated by default.
 
@@ -179,9 +178,9 @@ Actualizando su tema
 
 .. container:: col-sm-6
 
-  Since XML files are only loaded when you install the theme, you will have to force reloading every time you make changes on an xml file.
+  Dado que los archivos XML solo se cargan cuando instala su tema, deberá forzar la recarga del tema cada vez que realice cambios en algun archivo XML.
 
-  To do that, click on the Upgrade button in the module’s page.
+  Para hacer esto, pulsa en el botón Upgrade (actualizar) en la página del módulo.
 
   .. image:: theme_tutorial_assets/img/restart.png
 
@@ -217,7 +216,7 @@ El resultado final será algo como esto:
 .. image:: theme_tutorial_assets/img/folder.jpg
 
 Editando ``__manifest__.py``
---------------------------
+----------------------------
 
 Abra el archivo ``__manifest__.py`` que había creado, copia y pega el siguiente código:
 
@@ -235,17 +234,17 @@ Abra el archivo ``__manifest__.py`` que había creado, copia y pega el siguiente
     'depends': ['website'],
   }
 
-Replace the first four property’s values with anything you like.
-These values will be used to identify your new theme in Odoo’s backend.
+Modifique el valor de las cuatro primeras propiedades con los datos que usted desee.
+Esos valores serán utilizados para identificar su nuevo tema en el backend de Odoo.
 
-The ``data`` property will contain the xml files list. Right now it’s empty, but we will add any new files created.
+La propiedad ``data`` contendra la lista de archivos xml. Ahora está vacía, pero iremos agregando archivos a medida que los vayamos creando.
 
-``application: True`` is mandatory.
+``application: True`` es obligatorio.
 
-``category`` defines your module category (always “Theme”) and, after a slash, the subcategory. You can use one subcategory from the Odoo Apps categories list. (https://www.odoo.com/apps/themes)
+``category`` define la categoría de su módulo (siempre “Theme”) y, tras el slash, la subcategoría. Puede usar una subcategoría de las que existen en la lista de categorías de aplicaciones Odoo. (https://www.odoo.com/apps/themes)
 
 
-``depends`` specifies the modules needed by our theme to work properly. For our tutorial theme, we only need website. If you need blogging or eCommerce features as well, you have to add those modules too.
+``depends`` Especifica las dependencias de su módulo que necesita para que funcione correctamente. Para nuestro tutoria theme, solo necesitamos website. Si necesita características de blog o eCommerce, necesitará agregar también esos módulos.
 
 .. code-block:: python
 
@@ -265,18 +264,18 @@ A continuación, navegue hacia Settings page, busque su tema y pulse el botón d
 Estructura de una página en Odoo
 ================================
 
-An Odoo page is the visual result of a combination of 2 kind of elements, **cross-pages** and **unique**.
-By default, Odoo provides you with a **Header** and a **Footer** (cross-pages) and a unique main element that contains the content that makes your page unique.
+Una página Odoo es el resultado visual de una combinación de 2 tipos de elementos, **cross-pages** y **unique**.
+Por defecto, Odoo le proporciona un **Header** y un **Footer** (cross-pages) y un único elemento principal que contiene el contenido que hará su página única.
 
 .. note::
 
-  Cross-pages elements will be the same on every page. Unique elements are related to a specific page only.
+  los elementos Cross-pages son los mismos elementos en todas las páginas. Los elementos únicos son los que están relaccionados solamente con una página específica.
 
 .. image:: theme_tutorial_assets/img/page_structure.jpg
 
-To inspect the default layout, simply create a new page using the
-Website Builder.  Click on :menuselection:`Content --> New Page` and
-add a page name.  Inspect the page using your browser.
+Para revisar el layout por defecto, cree una nueva página usando el
+Website Builder.  Pulse en :menuselection:`Contenido --> Nueva página` e
+introduzca el nombre de la página. Inspeccione la página usando su navegador.
 
 .. code-block:: html
 
@@ -286,12 +285,12 @@ add a page name.  Inspect the page using your browser.
     <footer />
   </div>
 
-Extend the default Header
--------------------------
+Extendiendo el Header por defecto
+---------------------------------
 
-By default, Odoo header contains a responsive navigation menu and the company’s logo. You can easily add new elements or style the existing one.
+Por defecto, el header de Odoo contiene header contains un menú de navegación responsive y el logo de la compañía. Puede añadir fácilmente nuevos elementos y estilos al existente.
 
-To do so, create a **layout.xml** file in your **views** folder and add the default Odoo xml markup.
+Para realizar eso, cree un archivo a **layout.xml** en su carpeta **views** y agregue las etiquetas XML por defecto de Odoo.
 
 .. code-block:: xml
 
@@ -302,8 +301,8 @@ To do so, create a **layout.xml** file in your **views** folder and add the defa
      </data>
    </odoo>
 
-Create a new template into the ``<data>`` tag, copy-pasting the following
-code.
+Cree un nuevo template dentro de la etiqueta ``<data>`` , copiando y pegando el siguiente
+código.
 
 .. code-block:: xml
 
@@ -325,43 +324,43 @@ code.
     </xpath>
   </template>
 
-The first xpath will add the id ``my_header`` to the header. It’s the best option if you want to
-target css rules to that element and avoid these affecting other content on the page.
+El primer xpath agregará el id ``my_header`` al header. Es la mejor opción si quiere añadir
+reglas css a ese elemento sin que afecte al contenido del resto de la página.
 
 .. warning::
 
   Be careful replacing default elements attributes. As your theme will extend the default one,
   your changes will take priority in any future Odoo’s update.
 
-The second xpath will add a welcome message just after the navigation menu.
+El segundo xpath añade un mensaje de bienvenida justo tras el menú de navegaciónwill add a welcome message just after the navigation menu.
 
-The last step is to add layout.xml to the list of xml files used by
-the theme. To do that, edit your ``__manifest__.py`` file like this
+El último paso es añadir el layout.xml a la lista de archivos xml utilizados
+por el tema. Para hacer eso, edite su archivo ``__manifest__.py`` de esta manera
 
 .. code-block:: python
 
   'data': [ 'views/layout.xml' ],
 
-Update your theme
+Actualice su tema
 
 .. image:: theme_tutorial_assets/img/restart.png
 
-Great! We successfully added an id to the
+¡Genial! We successfully added an id to the
 header and an element after the navigation menu. These changes will be
 applied to each page of the website.
 
 .. image:: theme_tutorial_assets/img/after-menu.png
    :class: shadow-0
 
-Create a specific page layout
-=============================
+Creando un diseño de página específico
+======================================
 
-Imagine that we want to create a specific layout for a Services page.
-For this page, we need to add a list of services to the top and give the client the possibility of setting the rest of the page’s layout using snippets.
+Imagine que quiere crear un diseño específico a la página Services.
+Para esta página, añadirá una lista de servicios en la parte de arriba y dar al cliente la posibilidad de configurar el resto del diseño de la página usando snippets.
 
-Inside your *views* folder, create a **pages.xml** file and add the
-default Odoo markup.  Inside ``<data>`` create a ``<template>`` tag, set the
-``page`` attribute to ``True`` and add your code into it.
+Dentro de su carpeta *views* , cree un archivo **pages.xml** y las etiquetas
+por defecto de Odoo.  Dentro de ``<data>`` cree una etiqueta ``<template>`` , establezcaset
+el atributo ``page`` en ``True`` y agregue su código dentro.
 
 .. code-block:: xml
 
@@ -380,11 +379,11 @@ default Odoo markup.  Inside ``<data>`` create a ``<template>`` tag, set the
        </data>
      </odoo>
 
-The page title will be the template ID. In our case *Services* (from ``website.services``)
+El título de la página será el ID del template. En este caso *Services* (desde ``website.services``)
 
-We successfully created a new page layout, but we haven't told the
-system **how to use it**. To do that, we can use **QWeb**. Wrap the
-html code into a ``<t>`` tag, like in this example.
+Ha creado con éxito un nuevo layout de página, pero no le ha dicho al sistema
+ **como debe usarlo**. Para hacer esto, podrá usar **QWeb**. Inserta el
+código html en una etiqueta ``<t>`` , como en el siguiente ejemplo.
 
 .. code-block:: xml
 
@@ -404,14 +403,14 @@ html code into a ``<t>`` tag, like in this example.
      </t>
    </template>
 
-Using ``<t t-call="website.layout">`` we will extend the Odoo
-default page layout with our code.
+Usando ``<t t-call="website.layout">`` ha extendido el layout
+de la página por defecto de Odoo con su própio código.
 
-As you can see, we wrapped our code into two ``<div>``,  one with ID ``wrap`` and the other one with class ``container``. This is to provide a minimal layout.
+Como puede ver, se ha insertado el código entre dos ``<div>``,  uno con el ID ``wrap`` y el otro con la clase ``container``. Así se proporciona ellayout mínimo.
 
-The next step is to add an empty area that the user
-can fill with snippets. To achieve this, just create a ``div`` with
-``oe_structure`` class just before closing the ``div#wrap`` element.
+El siguiente paso es agregar un área vacia donde el usuario pueda
+lenar con los snippets. Para hacer esto, cree un ``div`` con la 
+clase ``oe_structure`` justo antes de cerrar el elemento ``div#wrap``.
 
 .. code-block:: xml
 
@@ -444,7 +443,7 @@ can fill with snippets. To achieve this, just create a ``div`` with
 
    You can create as many snippet areas as you like and place them anywhere in your pages.
 
-Our page is almost ready. Now all we have to do is add **pages.xml** in our **__manifest__.py** file
+Su página ya esta lista. Ahora solo hay que añadir  **pages.xml** en su archivo **__manifest__.py**
 
 .. code-block:: python
 
@@ -453,11 +452,11 @@ Our page is almost ready. Now all we have to do is add **pages.xml** in our **__
      'views/pages.xml'
    ],
 
-Update your theme
+Actualice su tema
 
 .. image:: theme_tutorial_assets/img/restart.png
 
-Great, our Services page is ready and you’ll be able to access it by navigating to ``/yourwebsite/page/services``.
+Genial, su página Services está lista y puede acceder a ella navegando a ``/yourwebsite/page/services``.
 
 You will notice that it's possible to drag/drop snippets underneath the
 *Our Services* list.
@@ -635,8 +634,8 @@ You can now drag your snippet from the snippet bar, drop it in your page and see
 .. image:: theme_tutorial_assets/img/snippet_default.png
 
 
-Snippet options
-===============
+Opciones de Snippet
+===================
 
 Options allow publishers to edit a snippet’s appearance using the Website Builder’s UI.
 Using Website Builder functionalities, you can create snippet options easily and automatically add them to the UI.
@@ -748,8 +747,8 @@ By replacing ``data-select_class`` with ``data-toggle_class`` you will be able t
 more classes at the same time.
 
 
-Javascript Options
-------------------
+Opciones Javascript
+-------------------
 
 ``data-select_class`` and ``data-toggle_class`` are great if you need to perform
 simple class change operations. But what if your snippet’s customization needs something more?
@@ -834,8 +833,8 @@ If you close it, then click outside of your snippet and then click in it again, 
 
 
 
-Editing Reference Guide
-=======================
+Editando la Guia de Referencia
+==============================
 
 Basically all the elements in a page can be edited by the publisher.
 Besides that, some element types and css classes will trigger special Website Builder functionalities when edited.
@@ -878,11 +877,11 @@ This html structure will create an ``<iframe>`` element editable by the publishe
 
 
 
-SEO best practice
-=================
+Buenas prácticas SEO
+====================
 
-Facilitate content insertion
-----------------------------
+Facilitar la inserción de contenido
+-----------------------------------
 
 Modern search engine algorithms increasingly focus on content, which means there is less focus on **keyword saturation** and more focus on whether or not the content is **actually relevant to the keywords**.
 
@@ -914,8 +913,8 @@ Let’s have a look to this example of a classic two column snippet, implemented
 
 
 
-Page segmentation
------------------
+Segmentación de Página
+----------------------
 
 Basically, page segmentation means that a page is divided into several separate parts and these parts are treated as separate entries by search engines.
 When you design pages or snippets, you should be sure to use the right tags in order to facilitate search engine indexing.
@@ -939,15 +938,15 @@ When you design pages or snippets, you should be sure to use the right tags in o
       <h2>Subheading</h2>
     </hgroup>
 
-Describe your page
+Describa su página
 ------------------
 
-Define keywords
+Defina keywords
 '''''''''''''''
 You should use appropriate, relevant keywords and synonyms for those keywords. You can define them for each page using the built-in “Promote” function found in the bar at the top.
 
-Define a title and a description
-''''''''''''''''''''''''''''''''
+Defina un título y una descripción
+''''''''''''''''''''''''''''''''''
 
 Define them using the “Promote” function. Keep your page titles short and include the main keyword phrase for the page.
 Good titles evoke an emotional response, ask a question or promise something.
