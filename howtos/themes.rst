@@ -54,7 +54,12 @@ Esta es la primera pregunta que hace un diseñador web acostumbrado a  trabajar 
 .. nota::
    :class: col-sm-12
 
-   Creemos que el diseño de temas tiene que ser simple (y potente). Cuando creamos nuestro Website Builder, decidimos empezar desde cero en lugar de confiar en lo que ya existía. Este enfoque nos dió la libertad de focalizarnos en las cosas que eran realmente importante para los diseñadores: estilos, contenido y la lógica detrás de ellos. No más luchas con  materias técnicas.
+   Creemos que el diseño de temas tiene que ser simple (y potente). 
+   Cuando creamos nuestro Website Builder, decidimos empezar desde cero 
+   en lugar de confiar en lo que ya existía. Este enfoque nos dió la libertad 
+   de focalizarnos en las cosas que eran realmente importante para los 
+   diseñadores: estilos, contenido y la lógica detrás de ellos. 
+   No más luchas con materias técnicas.
 
 La estructura de un tema por defecto en Odoo
 --------------------------------------------
@@ -171,7 +176,9 @@ Casi todos los elementos y opciones que usted vaya a crear deberán de colocarse
 
 .. importante::
 
-   no entienda mal el significado de ``template`` . Una etiqueta template solo define una parte de código html u opciones - pero no necesariamente coincide con una disposición visual de los elementos.
+   no entienda mal el significado de ``template`` . Una etiqueta template 
+   solo define una parte de código html u opciones - pero no necesariamente 
+   coincide con una disposición visual de los elementos.
 
 El código anterior define un título, pero no es visualizado en ninguna parte porque *template* no está asociado con ninguna parte en la **estructura por defecto de Odoo**.  Para que pueda hacer eso debe usar **xpath**, **qWeb** o una combinación de ambos.
 
