@@ -490,7 +490,7 @@ This code will add a link to the main menu.
 .. image:: theme_tutorial_assets/img/services_page_menu.png
    :class: shadow-0
 
-The **sequence** attribute defines the link’s position in the top menu.
+El atributo **sequence** define la posición del link en el menú superior.
 In our example, we set the value to ``99`` in order to place it last. I you want to place it in a particular position, you have to replace the value according to your needs.
 
 As you can see inspecting the *data.xml* file in the ``website`` module, the **Home** link is set to ``10`` and the **Contact** us one is set to ``60`` by default.
