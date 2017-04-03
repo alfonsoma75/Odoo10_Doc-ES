@@ -338,8 +338,8 @@ reglas css a ese elemento sin que afecte al contenido del resto de la página.
 
 .. warning::
 
-  Be careful replacing default elements attributes. As your theme will extend the default one,
-  your changes will take priority in any future Odoo’s update.
+  Tenga cuidado al sustituir los atributos de los elementos por defecto. 
+  tema vaya extendiendo el tema por defecto, sus cambios tendrán prioridad en futuras actualizaciones de Odoo
 
 El segundo xpath añade un mensaje de bienvenida justo tras el menú de navegaciónwill add a welcome message just after the navigation menu.
 
@@ -354,9 +354,9 @@ Actualice su tema
 
 .. image:: theme_tutorial_assets/img/restart.png
 
-¡Genial! We successfully added an id to the
-header and an element after the navigation menu. These changes will be
-applied to each page of the website.
+¡Genial! Ha añadido una id al header y un elemento despues del menú
+de navegación. Estos cambios se aplicarán a todas las páginas
+de su web.
 
 .. image:: theme_tutorial_assets/img/after-menu.png
    :class: shadow-0
@@ -461,20 +461,19 @@ Su página ya esta lista. Ahora solo hay que añadir  **pages.xml** en su archiv
      'views/pages.xml'
    ],
 
-Actualice su tema
+Actualice su tema.
 
 .. image:: theme_tutorial_assets/img/restart.png
 
 Genial, su página Services está lista y puede acceder a ella navegando a ``/yourwebsite/page/services``.
 
-You will notice that it's possible to drag/drop snippets underneath the
-*Our Services* list.
+Observará que es posible arrastrar y soltar debajo de la lista *Our Services*.
 
 .. image:: theme_tutorial_assets/img/services_page_nostyle.png
    :class: shadow-0
 
-Now let's go back to our *pages.xml* and, after our page template,
-copy/paste the following code.
+Regrese a su archivo *pages.xml* y, después de su template,
+copie y pegueel siguiente código.
 
 .. code-block:: xml
 
@@ -485,27 +484,27 @@ copy/paste the following code.
     <field name="sequence" type="int">99</field>
   </record>
 
-This code will add a link to the main menu.
+Este código añadira un link al menú principal.
 
 .. image:: theme_tutorial_assets/img/services_page_menu.png
    :class: shadow-0
 
 El atributo **sequence** define la posición del link en el menú superior.
-In our example, we set the value to ``99`` in order to place it last. I you want to place it in a particular position, you have to replace the value according to your needs.
+En el ejemplo, le asignamos el valor ``99`` para situarlo el último. Si quiere situarlo en otra posición, tiene que sustituir ese valor de acuerdo a sus necesidades.
 
-As you can see inspecting the *data.xml* file in the ``website`` module, the **Home** link is set to ``10`` and the **Contact** us one is set to ``60`` by default.
-If, for example, you want to place your link in the **middle**, you can set your link’s sequence value to ``40``.
+Como puede ver si inspecciona el archivo *data.xml* en el módulo ``website`` , El link **Home** tiene un valor de ``10`` y **Contact** tiene un valor de ``60`` por defecto.
+Si, por ejemplo, quiere situar su link en el **medio**, tiene que asignar un valor a su link de ``40``.
 
-Add Styles
-==========
+Añadiendo estilos
+=================
 
-Odoo includes Bootstrap by default. This means that you can take advantage of all Bootstrap styles and layout functionalities out of the box.
+Odoo incluye Bootstrap por defecto. Esto significa que puede aprovechar todos los estilos Bootstrap y funcionalidades de dieño.
 
-Of course Bootstrap is not enough if you want to provide a unique design. The following steps will guide you through how to add custom styles to your theme.
-The final result won't be pretty, but will provide you with enough information to build upon on your own.
+Por supuesto Boostrap no es suficiente para lograr un diseño único. En los siguientes pasos le mostraremos como puede agregar estilos personalizados a su tema.
+El resultado final no sera bonito, pero, pero le proporcionará la información suficiente para que pueda realizar los suyos propios.
 
-Let’s start by creating an empty file called **style.less** and place it in a folder called **less** in your static folder.
-The following rules will style our *Services* page. Copy and paste it, then save the file.
+Comencemos creando un archivo llamado **style.less** y situado en una carpeta llamada **less** dentro de la carpeta static.
+El siguiente código dará estilo a su página *Services* . Copie y pegue y guarde el archivo.
 
 .. code-block:: css
 
@@ -525,9 +524,9 @@ The following rules will style our *Services* page. Copy and paste it, then save
        }
    }
 
-Our file is ready but it is not included in our theme yet.
+El archivo ya está listo pero aún no se ha incluido en nuestro tema.
 
-Let’s navigate to the view folder and create an XML file called *assets.xml*. Add the default Odoo xml markup and copy/paste the following code. Remember to replace ``theme folder`` with your theme’s main folder name.
+Vayamos a la carpeta view y crearemos un archivo XML llamado *assets.xml*. Añadiremos las etiquetas xml por defecto de Odoo y copie y pegue el siguiente código. Recuerde cambiar ``theme folder`` por el nombre de la carpeta de su tema.
 
 .. code-block:: xml
 
@@ -537,12 +536,12 @@ Let’s navigate to the view folder and create an XML file called *assets.xml*. 
        </xpath>
    </template>
 
-We just created a template specifying our less file. As you can see,
-our template has a special attribute called ``inherit_id``.  This
-attribute tells Odoo that our template is referring to another one in
-order to operate.
+Tenemos que crear un template indicando nuestro archivo less. Como puede ver,
+nuestro template tiene un atributo especial llamado ``inherit_id``.  Este
+atributo le dice a Odoo que nuestro tema está referido por otro para poder
+funcionar correctamente.
 
-In this case, we are referring to ``assets_frontend`` template,
+En este caso, we are referring to ``assets_frontend`` template,
 located in the ``website`` module. ``assets_frontend`` specifies the
 list of assets loaded by the website builder and our goal is to add
 our less file to this list.
@@ -555,20 +554,20 @@ assets*".
 Placing it after the last one, we ensure that our file will
 be loaded at the end and take priority.
 
-Finally add **assets.xml** in your **__manifest__.py** file.
+Finalmente añada **assets.xml** en su archivo **__manifest__.py** .
 
-Update your theme
+Actualice su tema.
 
 .. image:: theme_tutorial_assets/img/restart.png
 
 
-Our less file is now included in our theme, it will be automatically compiled, minified and combined with all Odoo’s assets.
+El archivo less ahora se ha incluído en el tema, y será compilado automaticamente, comprimido y combinado con todos los assets de Odoo.
 
 .. image:: theme_tutorial_assets/img/services_page_styled.png
    :class: shadow-0
 
-Create Snippets
-===============
+Crear Snippets
+==============
 
 Since snippets are how users design and layout pages, they are the most important element of your design.
 Let’s create a snippet for our Service page. The snippet will display three testimonials and it will be editable by the end user using the Website Builder UI.
@@ -649,19 +648,19 @@ Opciones de Snippet
 Options allow publishers to edit a snippet’s appearance using the Website Builder’s UI.
 Using Website Builder functionalities, you can create snippet options easily and automatically add them to the UI.
 
-Options group properties
-------------------------
+Opciones de grupos de propiedades
+---------------------------------
 
-Options are wrapped in groups. Groups can have properties that define how the included options will interact with the user interface.
+Las opciones están contenidas en grupos. Los grupos pueden tener propiedades que definen como interactuan las opciones incluídas con el interface de usuario.
 
 ``data-selector=" css selector(s) "``
-  Bind all the options included into the group to a particular element.
+  Vincula todas las opciones del grupo a un elemento particular.
 ``data-js=" custom method name "``
-  Is used to bind custom Javascript methods.
+  Se usa para enlazar métodos Javascript personalizados.
 ``data-drop-in=" css selector(s) "``
-  Defines the list of elements where the snippet can be dropped into.
+  Define una lista de elementos donde se puede soltar el snippet dentro.
 ``data-drop-near=" css selector(s) "``
-  Defines the list of elements that the snippet can be dropped beside.
+  Define una lista de elementos donde el snippet puede ser soltado a su lado.
 
 Default option methods
 ----------------------
@@ -759,10 +758,10 @@ more classes at the same time.
 Opciones Javascript
 -------------------
 
-``data-select_class`` and ``data-toggle_class`` are great if you need to perform
+``data-select_class`` y ``data-toggle_class`` are great if you need to perform
 simple class change operations. But what if your snippet’s customization needs something more?
 
-As we said before, ``data-js`` propriety can be assigned to an options group in order to define a custom method. Let’s create one for our *testimonials snippet* by adding a ``data-js`` attribute to the option’s group div that we created earlier.
+Como hemos dicho antes, la propiedad ``data-js`` can be assigned to an options group in order to define a custom method. Let’s create one for our *testimonials snippet* by adding a ``data-js`` attribute to the option’s group div that we created earlier.
 
 .. code-block:: xml
 
@@ -770,9 +769,9 @@ As we said before, ``data-js`` propriety can be assigned to an options group in 
      [...]
    </div>
 
-Done. From now on, the Website Builder will look for a
-``snippet_testimonial_options`` method each time the publisher enters in edit
-mode.
+Bien. por ahora, el Website Builder buscara el método
+``snippet_testimonial_options`` cada vez que el editor entre en
+el modo de edición.
 
 Let's go one step further by creating a javascript file, name
 it **tutorial_editor.js** and place it into the **static** folder.  Copy/paste
@@ -845,8 +844,8 @@ If you close it, then click outside of your snippet and then click in it again, 
 Editando la Guia de Referencia
 ==============================
 
-Basically all the elements in a page can be edited by the publisher.
-Besides that, some element types and css classes will trigger special Website Builder functionalities when edited.
+Basicamente todos los elementos de la página pueden ser editados por el usuario.
+Además. algunos tipos de elementos y clases css  activarán funciones especiales del Website Builder cuando se edite.
 
 Layout
 ------
@@ -905,7 +904,7 @@ Let’s have a look to this example of a classic two column snippet, implemented
 
 .. container:: col-sm-5
 
-  Bad
+  Mal
 
   Using fixed image, the publisher will be forced to limit the text in order to follow the layout.
 
@@ -916,7 +915,7 @@ Let’s have a look to this example of a classic two column snippet, implemented
 
 .. container:: col-sm-5
 
-  Good
+  Bien
 
   Using background images that fit the column height, the publisher will be free to add the content regardless of the image’s height.
 
@@ -952,7 +951,7 @@ Describa su página
 
 Defina keywords
 '''''''''''''''
-You should use appropriate, relevant keywords and synonyms for those keywords. You can define them for each page using the built-in “Promote” function found in the bar at the top.
+Debe usar las keywords más relevantes y apropiadas y sus sinónimos. You can define them for each page using the built-in “Promote” function found in the bar at the top.
 
 Defina un título y una descripción
 ''''''''''''''''''''''''''''''''''
