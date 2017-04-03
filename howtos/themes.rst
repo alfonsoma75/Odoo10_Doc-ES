@@ -176,7 +176,7 @@ Casi todos los elementos y opciones que usted vaya a crear deberán de colocarse
 
 .. importante::
 
-   no entienda mal el significado de ``template`` . Una etiqueta template 
+   No malinterprete el significado de ``template`` . Una etiqueta template 
    solo define una parte de código html u opciones - pero no necesariamente 
    coincide con una disposición visual de los elementos.
 
@@ -285,7 +285,8 @@ Por defecto, Odoo le proporciona un **Header** y un **Footer** (cross-pages) y u
 
 .. nota::
 
-  Los elementos Cross-pages son los mismos elementos en todas las páginas. Los elementos únicos son los que están relaccionados solamente con una página específica.
+  Los elementos Cross-pages son los mismos elementos en todas las páginas. Los elementos únicos 
+  son los que están relaccionados solamente con una página específica.
 
 .. image:: theme_tutorial_assets/img/page_structure.jpg
 
@@ -345,8 +346,9 @@ reglas css a ese elemento sin que afecte al contenido del resto de la página.
 
 .. Atención::
 
-  Tenga cuidado al sustituir los atributos de los elementos por defecto. 
-  tema vaya extendiendo el tema por defecto, sus cambios tendrán prioridad en futuras actualizaciones de Odoo
+  Tenga cuidado al sustituir los atributos de los elementos por defecto. A medida que su
+  tema vaya extendiendo el tema por defecto, sus cambios tendrán prioridad en futuras 
+  actualizaciones de Odoo
 
 El segundo xpath añade un mensaje de bienvenida justo tras el menú de navegaciónwill add a welcome message just after the navigation menu.
 
@@ -457,7 +459,7 @@ clase ``oe_structure`` justo antes de cerrar el elemento ``div#wrap``.
 
 .. tip::
 
-   You can create as many snippet areas as you like and place them anywhere in your pages.
+   Puede crear tantas áreas snippet como desee y colocarlas en cualquier lugar de la página.
 
 Su página ya esta lista. Ahora solo hay que añadir  **pages.xml** en su archivo **__manifest__.py**
 
@@ -545,21 +547,21 @@ Vayamos a la carpeta view y crearemos un archivo XML llamado *assets.xml*. Añad
 
 Tenemos que crear un template indicando nuestro archivo less. Como puede ver,
 nuestro template tiene un atributo especial llamado ``inherit_id``.  Este
-atributo le dice a Odoo que nuestro tema está referido por otro para poder
+atributo le dice a Odoo que nuestro tema está referido a otro para poder
 funcionar correctamente.
 
-En este caso, we are referring to ``assets_frontend`` template,
-located in the ``website`` module. ``assets_frontend`` specifies the
-list of assets loaded by the website builder and our goal is to add
-our less file to this list.
+En este caso, es referido por el template ``assets_frontend`` ,
+localizado en el módulo ``website`` . ``assets_frontend`` especifica
+la lista de assets cargados por el website builder y nuestro objetivo
+es añadir nuestro archivo less a la lista.
 
-This can be achieved using xpath with the attributes
-``expr="link[last()]"`` and ``position="after"``, which means "*take my
-style file and place it after the last link in the list of the
-assets*".
+Esto se logra utilizando xpath con los atributos
+``expr="link[last()]"`` y ``position="after"``, que significa
+"*toma mi archivo de estilos y colócalo después del último
+link de la lista de assets*".
 
-Placing it after the last one, we ensure that our file will
-be loaded at the end and take priority.
+Colocándolo después del último, nos aseguramos que el archivo sea
+cargado al final y esa será su prioridad.
 
 Finalmente añada **assets.xml** en su archivo **__manifest__.py** .
 
@@ -754,19 +756,19 @@ Let’s create some css rules in order to provide a visual feedback for our opti
 .. image:: theme_tutorial_assets/img/snippet_options2.png
    :class: shadow-0
 
-Great! We successfully created options for our snippet.
+¿Genial! Hemos creado las opciones para nuestro snippet.
 
-Any time the publisher clicks on an option, the system will add the class specified in the data-select_class attribute.
+En cualquier momento el usuario puede pulsar en una opción, el sistema agregará la clase que se especifica en el atributo data-select_class.
 
-By replacing ``data-select_class`` with ``data-toggle_class`` you will be able to select
-more classes at the same time.
+Sustituyendo ``data-select_class`` por ``data-toggle_class`` usted podrá seleccionar
+varias clases al mismo tiempo.
 
 
 Opciones Javascript
 -------------------
 
-``data-select_class`` y ``data-toggle_class`` are great if you need to perform
-simple class change operations. But what if your snippet’s customization needs something more?
+``data-select_class`` y ``data-toggle_class`` son ideales si usted necesita realizar
+operaciones simples de cambio de clase. Pero ¿y si su snippet personalizado necesita algo más?
 
 Como hemos dicho antes, la propiedad ``data-js`` can be assigned to an options group in order to define a custom method. Let’s create one for our *testimonials snippet* by adding a ``data-js`` attribute to the option’s group div that we created earlier.
 
@@ -958,12 +960,12 @@ Describa su página
 
 Defina keywords
 '''''''''''''''
-Debe usar las keywords más relevantes y apropiadas y sus sinónimos. You can define them for each page using the built-in “Promote” function found in the bar at the top.
+Debe usar las keywords más relevantes y apropiadas y sus sinónimos. Puede definirlas para cada página usando la herramienta “Promover” que se encuentra en la barra superior.
 
 Defina un título y una descripción
 ''''''''''''''''''''''''''''''''''
 
-Define them using the “Promote” function. Keep your page titles short and include the main keyword phrase for the page.
-Good titles evoke an emotional response, ask a question or promise something.
+Puede definirlos con la herramienta “Promover”. Agregue el título corto e incluya las keywords principales para la página.
+Un buen título logra una respuesta emocional, haga una pregunta, promesa o algo similar.
 
-Descriptions, while not important to search engine rankings, are extremely important in gaining user click-through. These are an opportunity to advertise content and to let people searching know exactly whether the given page contains the information they're looking for. It is important that titles and descriptions on each page are unique.
+La descripción, aunque no es importante para los rankings en los buscadores, son muy importantes para obtener el click del usuario. Es una oportunidad para anunciar su contenido y permitir que las personas que realizan búsquedas sepan si la página contiene la información que busca. Es importante que los títulos y las descripciones de cada página sean únicos.
