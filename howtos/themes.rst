@@ -937,7 +937,7 @@ Básicamente, la segmentación de la página significa que una página estará d
 Cuando diseñe páginas o snippets, debe asegurarse de utilizar las etiquetas correctas para facilitar la indexación en los motores de búsqueda.
 
 ``<article>``
-  Especifica un bloque independiente de contenido. Dentro se debe poner un contenido que pueda tener sentido por si mismoWithin it should be a piece of self-contained content that should make sense on its own. Puede anidar elementos ``<article>`` dentro de otros elementos. En ese caso, está implicito que los elementos anidados están relaccionados con el elemento ``<article>`` exterior.
+  Especifica un bloque independiente de contenido. Dentro se debe poner un contenido que pueda tener sentido por si mismo. Puede anidar elementos ``<article>`` dentro de otros elementos. En ese caso, está implicito que los elementos anidados están relaccionados con el elemento ``<article>`` exterior.
 
 ``<header>``
   Indica la sección de cabecera(header) de un bloque de contenido (como ``<article>``).
