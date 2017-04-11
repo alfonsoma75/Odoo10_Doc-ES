@@ -654,8 +654,8 @@ Ahora podrá arrastrar su snippet desde la barra de snippets, sueltelo en la pá
 Opciones de Snippet
 ===================
 
-Options allow publishers to edit a snippet’s appearance using the Website Builder’s UI.
-Using Website Builder functionalities, you can create snippet options easily and automatically add them to the UI.
+Las opciones permiten al usuario editar la apariencia del snippet usando la UI del Website Builder.
+Usando las funcionalidades del Website Builder, podrá crear opciones para el snippet de forma fácil y agregarlas de forma automática al UI.
 
 Opciones de grupos de propiedades
 ---------------------------------
@@ -677,10 +677,10 @@ Default option methods
 Las opciones aplican clases css estandars al snippet. Dependiendo del método que elija, la UI se comportarád e manera diferente.
 
 ``data-select_class=" class name "``
-  More data-select_class in the same group defines a list of classes that the user can choose to apply. Only one option can be enabled at a time.
+  Varios data-select_class en el mismo grupo definen una lista de clases que el usuario puede escoger y aplicar. Solo una opción puede ser activada.
 
 ``data-toggle_class=" class name "``
-  The data-toggle_class is used to apply one or more CSS classes from the list to a snippet. Multiple selections can be applied at once.
+  La data-toggle_class es utilizada para aplicar una o varias clases CSS de la lista a un snippet. Se pueden seleccionar varias a la vez.
 
 Mostramos como funcionan las opciones por defecto con un simple ejemplo..
 
@@ -704,23 +704,23 @@ Comencemos agregando un nuevo archivo en la carpeta views - llamelo **options.xm
     </xpath>
    </template>
 
-.. note::
+.. nota::
 
   El anterior template heredará el **snippet_options template** por defecto añadiendo nuestras opciones a las de **background** (atributo axpr de xpath).
   Para poner sus opciones en un orden determinado, inspeccione el  **snippet_options template** del **website module** y agregue sus opciones antes/después en la posición que desee.
 
-As como puede ver, hemos metido todas nuestras opciones dentro de una etiqueta DIV tag que
+Así como puede ver, hemos metido todas nuestras opciones dentro de una etiqueta DIV tag que
 las agrupará y las podremos usar eligiendo el selector adecuado
 (``data-selector=".snippet_testimonial"``).
 
-To define our options we applied ``data-select_class`` attributes to the
-``li`` elements. When the user selects an option, the class contained in
-the attribute will automatically be applied to the element.
+Para definir nuestras opciones hemos aplicado el atributo ``data-select_class`` a los elementos
+``li``. Cuando el usuario seleccione una opción, la clase que contiene el atributo será
+aplicada de forma automática al elemento.
 
-Since ``select_class`` method avoids multiple selections, the last "empty"
-option will reset the snippet to default.
+Dado que el método  ``select_class`` mno permite selección múltiple, la última opción "empty"
+resetea al snippet por defecto.
 
-Add **options.xml** to ``__manifest__.py`` and update your theme.
+Agregue **options.xml** al ``__manifest__.py`` y actualice su tema.
 
 .. image:: theme_tutorial_assets/img/restart.png
 
@@ -794,7 +794,7 @@ el siguiente código
         website.odoo_website = {};
     })();
 
-¡Genial!, we successfully created our javascript editor file. This file will contain all the javascript functions used by our snippets in edit mode. Let’s create a new function for our testimonial snippet using the ``snippet_testimonial_options`` method that we created before.
+¡Genial!, hemos creado nuestro archivor javascript. Este archivo contendrá todas las funciones de javascript utilizadas por el snippet en el modo edición. Vamos a crear una nueva funcion para nuestro snippet testimonial utilizando el método ``snippet_testimonial_options``que hemos creado antes.
 
 .. code-block:: javascript
 
@@ -815,18 +815,18 @@ Como se habrá dado cuenta, hemos usado el método llamado ``on_focus`` para act
 ===========================  ==================================
 Event                        Description
 ===========================  ==================================
-``start``                    Fires when the publisher selects the snippet for the first time in an editing session or when the snippet is drag-dropped into the page
-``on_focus``                 Fires each time the snippet is selected by the user or when the snippet is drag-dropped into the page.
+``start``                    Se activa cuando el usuario selecciona el snippet por primera vez en una sesion de modo edición o cuando el snippet es arrastrado y soltado en la página
+``on_focus``                 Se activa cada vez que el snippet es seleccionado por el usuario o cuando se arrastra y suelta dentro de la página.
 ``on_blur``                  Este evento se activa cuando un snippet pierde el foco.
-``on_clone``                 Fires just after a snippet is duplicated. A new js variable is created ($clone) containing the cloned element.
-``on_remove``                It occurs just before that the snippet is removed.
-``drop_and_build_snippet``   Fires just after that the snippet is drag and dropped into a drop zone. When this event is triggered, the content is already inserted in the page.
+``on_clone``                 Se activa justo despues de que un snippet es duplicado. Una nueva variable js es creada ($clone) que contiene el elemento clonado.
+``on_remove``                Sucede justo antes de que el snippet es borrado.
+``drop_and_build_snippet``   Se activa justo después que el snippet es arrastrado y soltado en una zona permitida. Cuando se activa este evento, el contenido ya se ha insertado en la página.
 ``clean_for_save``           Se activa antes que el usuario guarde la página.
 ===========================  ==================================
 
-Let’s add our new javascript files to the editor assets list.
-Go back to **assets.xml** and create a new template like the previous one.
-This time we have to inherit ``assets_editor`` instead of ``assets_frontend``.
+Agreguemos un nuevo archivo javascript en la lista del editor de assets.
+Volvamos al archivo **assets.xml** y creémos un nuevo template como el anterior.
+Esta vez tenemos que heredar ``assets_editor`` en lugar de ``assets_frontend``.
 
 .. code-block:: xml
 
@@ -853,23 +853,23 @@ Si la cierra, pulsa fuera del snippet y vuelve a hacerlo dentro, el evento se de
 Editando la Guia de Referencia
 ==============================
 
-Basicamente todos los elementos de la página pueden ser editados por el usuario.
+Básicamente todos los elementos de la página pueden ser editados por el usuario.
 Además. algunos tipos de elementos y clases css  activarán funciones especiales del Website Builder cuando se edite.
 
 Layout
 ------
 
 ``<section />``
-  Any section element can be edited like a block of content. The publisher can move or duplicate it. It’s also possible to set a background image or color. Section is the standard main container of any snippet.
+  Cualquier elemento section puede ser editable como un bloque de contenido. El usuario puede mover o duplicarlo. También es posible insertar un color o una imágen de fondo. Section es el contenedor estandar de cualquier snippet.
 
 ``.row > .col-md-*``
-  Any medium  bootstrap columns  directly descending from a .row element, will be resizable by the publisher.
+  Cualquier columna en bootstrap desciende directamente de un elemento .row, el usuario lo podrá redimensionar.
 
 ``contenteditable="False"``
-  This attribute will prevent editing to the element and all its children.
+  Este atributo evita el poder editar el elemento y sus descendiantes(hijos).
 
 ``contenteditable="True"``
-  Apply it to an element inside a contenteditable="False" element in order to create an exception and make the element and its children editable.
+  Se aplica a un elemento dentro de otro elemento con contenteditable="False"  con el fin de hacer que dicho elemento y sus hijos sean editables.
 
 ``<a href=”#” />``
   En modo edición, cualquier link puede ser editado y se le puede dar estilos. Usando “Link Modal” también será posible reemplazarlo por un botón.
@@ -915,7 +915,7 @@ Let’s have a look to this example of a classic two column snippet, implemented
 
   Mal
 
-  Using fixed image, the publisher will be forced to limit the text in order to follow the layout.
+  Usando una imágen fija, el usuario se verá obligado a limitar el texto para seguir el diseño.
 
 
 .. container:: col-sm-7
@@ -926,27 +926,27 @@ Let’s have a look to this example of a classic two column snippet, implemented
 
   Bien
 
-  Using background images that fit the column height, the publisher will be free to add the content regardless of the image’s height.
+  Usando una imágen de fondo que se ajusten a la altura de la columna, el usuario podrá agregar contenido sin estar limitado por el tamaño.
 
 
 
 Segmentación de Página
 ----------------------
 
-Basically, page segmentation means that a page is divided into several separate parts and these parts are treated as separate entries by search engines.
-When you design pages or snippets, you should be sure to use the right tags in order to facilitate search engine indexing.
+Básicamente, la segmentación de la página significa que una página estará dividida en varias partes y esas partes serán tratadas por separado por los motores de búsqueda.
+Cuando diseñe páginas o snippets, debe asegurarse de utilizar las etiquetas correctas para facilitar la indexación en los motores de búsqueda.
 
 ``<article>``
-  Specifies an independent block of content. Within it should be a piece of self-contained content that should make sense on its own. You can nest ``<article>`` elements within one another. In this case, it’s implied that the nested elements are related to the outer ``<article>`` element.
+  Especifica un bloque independiente de contenido. Dentro se debe poner un contenido que pueda tener sentido por si mismoWithin it should be a piece of self-contained content that should make sense on its own. Puede anidar elementos ``<article>`` dentro de otros elementos. En ese caso, está implicito que los elementos anidados están relaccionados con el elemento ``<article>`` exterior.
 
 ``<header>``
-  Indicates the header section of a self-contained block of content (an ``<article>``).
+  Indica la sección de cabecera(header) de un bloque de contenido (como ``<article>``).
 
 ``<section>``
-  Is the snippet default tag and it specifies a subsection of a block of content. It can be used to split ``<article>`` content into several parts. It’s advisable to use a heading element (``<h1>`` – ``<h6>``) to define the section’s topic.
+  Es la etiqueta por defecto para un snippet y especifica una subsección de un bloque de contenido. Puede ser utilizado para dividir contenido de un  ``<article>`` en varias partes. Es aconsejable utilizar elementos de encabezado (``<h1>`` – ``<h6>``) para definir el tema de la sección.
 
 ``<hgroup>``
-  Is used to wrap a section of headings (``<h1>`` - ``<h6>``). A great example would be an article with both a headline and sub-headline at the top:
+  Es utilizado para agrupar etiquetas de cabecera (``<h1>`` - ``<h6>``). Un buen ejemplo sería un articulo con un título y un subtítulo en la parte superior:
 
   .. code-block:: html
 
