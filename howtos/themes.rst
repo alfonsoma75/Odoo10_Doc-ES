@@ -578,11 +578,11 @@ El archivo less ahora se ha incluído en el tema, y será compilado automaticame
 Crear Snippets
 ==============
 
-Since snippets are how users design and layout pages, they are the most important element of your design.
-Let’s create a snippet for our Service page. The snippet will display three testimonials and it will be editable by the end user using the Website Builder UI.
-Navigate to the view folder and create an XML file called **snippets.xml**.
-Add the default Odoo xml markup and copy/paste the following code.
-The template contains the HTML markup that will be displayed by the snippet.
+Dado que los snippets son la forma en que los usuarios distribuyen el contenido de las páginas, son el elemento más importante en el diseño.
+Vamos a crear un snippet para nuestra página de servicios. El snippet mostrará tres testimonios y será editable por el cliente usando el Website Builder UI.
+Vaya a la carpeta view y cree un archivo XML llamado **snippets.xml**.
+Agregue las etiquetas xml por defecto de Odoo y copie y pegue el siguiente código.
+El template contiene las etiquetas HTML que visualizará el snippet.
 
 .. code-block:: xml
 
@@ -610,9 +610,9 @@ The template contains the HTML markup that will be displayed by the snippet.
      </section>
    </template>
 
-As you can see, we used Bootstrap default classes for our three columns. It’s not just about layout, these classes **will be triggered by the Website Builder to make them resizable by the user**.
+Como puede ver, hemos usado las clases por defecto de Bootstrap para nuestras tres columnas. No se trata solo del diseño, esas clases **serán activados por el Website Builder para que el usuario pueda redimensionarlos**.
 
-The previous code will create the snippet’s content, but we still need to place it into the editor bar, so the user will be able to drag&drop it into the page. Copy/paste this template in your **snippets.xml** file.
+El código anterior creará el contenido del snippet, pero necesitaremos incluirlo en la barra de edición, para que el usuario pueda arrastrarlos y soltarlo en la página. Copie y pegue este template en su archivo **snippets.xml**.
 
 .. code-block:: xml
 
@@ -625,9 +625,9 @@ The previous code will create the snippet’s content, but we still need to plac
 
 .. rst-class:: col-sm-6
 
-Using xpath, we are targeting a particular element with id
-``snippet_structure``. This means that the snippet will appear in the
-Structure tab. If you want to change the destination tab, you have just to replace the ``id`` value in the xpath expression.
+Usando xpath, estamos apuntando a un elemento particular con su id
+``snippet_structure``. Esto significa que el snippet aparecerá en la
+pestaña Structure. Si quiere cambiar la pestaña de destino, solo tiene que cambiar el valor del ``id`` en la etiqueta xpath.
 
 
 
@@ -645,8 +645,8 @@ Feature       ``//div[@id='snippet_feature']``
 Effect        ``//div[@id='snippet_effect']``
 ============  ==================================
 
-The ``<t>`` tag will call our snippet's template and will assign a thumbnail placed in the img folder.
-You can now drag your snippet from the snippet bar, drop it in your page and see the result.
+La etiqueta ``<t>`` llama al template de nuestro snippet y le asignará un thumbnail situado en la carpeta img.
+Ahora podrá arrastrar su snippet desde la barra de snippets, sueltelo en la página y vea el resultado.
 
 .. image:: theme_tutorial_assets/img/snippet_default.png
 
@@ -674,7 +674,7 @@ Las opciones están contenidas en grupos. Los grupos pueden tener propiedades qu
 Default option methods
 ----------------------
 
-Options apply standard CSS classes to the snippet. Depending on the method that you choose, the UI will behave differently.
+Las opciones aplican clases css estandars al snippet. Dependiendo del método que elija, la UI se comportarád e manera diferente.
 
 ``data-select_class=" class name "``
   More data-select_class in the same group defines a list of classes that the user can choose to apply. Only one option can be enabled at a time.
@@ -682,9 +682,9 @@ Options apply standard CSS classes to the snippet. Depending on the method that 
 ``data-toggle_class=" class name "``
   The data-toggle_class is used to apply one or more CSS classes from the list to a snippet. Multiple selections can be applied at once.
 
-Let's demonstrate how default options work with a basic example.
+Mostramos como funcionan las opciones por defecto con un simple ejemplo..
 
-We start by adding a new file in our views folder - name it **options.xml** and add the default Odoo XML markup. Create a new template copy/pasting the following
+Comencemos agregando un nuevo archivo en la carpeta views - llamelo **options.xml** y añada las etiquetas XML por defecto de Odoo. Cree un nuevo template copiando y pegando lo siguiente
 
 
 .. code-block:: xml
@@ -706,11 +706,11 @@ We start by adding a new file in our views folder - name it **options.xml** and 
 
 .. note::
 
-  The previous template will inherit the default **snippet_options template** adding our options after the **background** options (xpath expr attribute).
-  To place your options in a particular order, inspect the **snippet_options template** from the **website module** and add your options before/after the desired position.
+  El anterior template heredará el **snippet_options template** por defecto añadiendo nuestras opciones a las de **background** (atributo axpr de xpath).
+  Para poner sus opciones en un orden determinado, inspeccione el  **snippet_options template** del **website module** y agregue sus opciones antes/después en la posición que desee.
 
-As you can see, we wrapped all our options inside a DIV tag that will
-group our options and that will target them to the right selector
+As como puede ver, hemos metido todas nuestras opciones dentro de una etiqueta DIV tag que
+las agrupará y las podremos usar eligiendo el selector adecuado
 (``data-selector=".snippet_testimonial"``).
 
 To define our options we applied ``data-select_class`` attributes to the
@@ -724,11 +724,11 @@ Add **options.xml** to ``__manifest__.py`` and update your theme.
 
 .. image:: theme_tutorial_assets/img/restart.png
 
-Dropping our snippet onto the page, you will notice that our new options are automatically added to the customize menu. Inspecting the page, you will also notice that the class will be applied to the element when selecting an option.
+Arrastrando nuestro snippet a la página, notará que nuestras opciones se añaden de forma automática al menu personalizado. Revisando la página, también notará que las clases se aplicarán al elemento cuando seleccionamos una opción.
 
 .. image:: theme_tutorial_assets/img/snippet_options.png
 
-Let’s create some css rules in order to provide a visual feedback for our options. Open our **style.less** file and add the following
+Creemos algunas reglas css rules con el fin de dar un feedback visual para nuestras opciones. Abriremos nuestro archivo  **style.less** y agregando lo siguiente
 
 .. code-block:: css
 
@@ -756,7 +756,7 @@ Let’s create some css rules in order to provide a visual feedback for our opti
 .. image:: theme_tutorial_assets/img/snippet_options2.png
    :class: shadow-0
 
-¿Genial! Hemos creado las opciones para nuestro snippet.
+¡Genial! Hemos creado las opciones para nuestro snippet.
 
 En cualquier momento el usuario puede pulsar en una opción, el sistema agregará la clase que se especifica en el atributo data-select_class.
 
@@ -782,9 +782,9 @@ Bien. por ahora, el Website Builder buscara el método
 ``snippet_testimonial_options`` cada vez que el editor entre en
 el modo de edición.
 
-Let's go one step further by creating a javascript file, name
-it **tutorial_editor.js** and place it into the **static** folder.  Copy/paste
-the following code
+Demos un paso más creando un archivo javascript, llamelo
+**tutorial_editor.js** y guardelo dentro de la carpeta **static** .  Copie y pegue
+el siguiente código
 
 .. code-block:: javascript
 
@@ -794,7 +794,7 @@ the following code
         website.odoo_website = {};
     })();
 
-Great, we successfully created our javascript editor file. This file will contain all the javascript functions used by our snippets in edit mode. Let’s create a new function for our testimonial snippet using the ``snippet_testimonial_options`` method that we created before.
+¡Genial!, we successfully created our javascript editor file. This file will contain all the javascript functions used by our snippets in edit mode. Let’s create a new function for our testimonial snippet using the ``snippet_testimonial_options`` method that we created before.
 
 .. code-block:: javascript
 
@@ -810,18 +810,18 @@ Great, we successfully created our javascript editor file. This file will contai
        })
    })();
 
-As you will notice, we used a method called ``on_focus`` to trigger our function. The Website Builder provides several events you can use to trigger your custom functions.
+Como se habrá dado cuenta, hemos usado el método llamado ``on_focus`` para activar nuestra función. El Website Builder proporciona varios eventos que puede usar para activar sus propias funciones.
 
 ===========================  ==================================
 Event                        Description
 ===========================  ==================================
 ``start``                    Fires when the publisher selects the snippet for the first time in an editing session or when the snippet is drag-dropped into the page
 ``on_focus``                 Fires each time the snippet is selected by the user or when the snippet is drag-dropped into the page.
-``on_blur``                  This event occurs when a snippet loses focus.
+``on_blur``                  Este evento se activa cuando un snippet pierde el foco.
 ``on_clone``                 Fires just after a snippet is duplicated. A new js variable is created ($clone) containing the cloned element.
 ``on_remove``                It occurs just before that the snippet is removed.
 ``drop_and_build_snippet``   Fires just after that the snippet is drag and dropped into a drop zone. When this event is triggered, the content is already inserted in the page.
-``clean_for_save``           It trigger before the publisher save the page.
+``clean_for_save``           Se activa antes que el usuario guarde la página.
 ===========================  ==================================
 
 Let’s add our new javascript files to the editor assets list.
@@ -836,14 +836,14 @@ This time we have to inherit ``assets_editor`` instead of ``assets_frontend``.
     </xpath>
   </template>
 
-Update your theme
+Actualice su tema
 
 .. image:: theme_tutorial_assets/img/restart.png
 
 
-Let’s test our new javascript function. Enter in Edit mode and drop into the page.
-You should now see the javascript alert that we bound on the ``on_focus`` event.
-If you close it, then click outside of your snippet and then click in it again, the event will trigger again.
+Hora de testear nuestra nueva función javascript. Entre en el modo edición y sueltelo dentro de la página.
+Podrá ver como la alerta javascript se activa con el evento ``on_focus`` .
+Si la cierra, pulsa fuera del snippet y vuelve a hacerlo dentro, el evento se desencadenará de nuevo.
 
 .. image:: theme_tutorial_assets/img/snippet_custom_method.png
    :class: shadow-0
@@ -872,15 +872,15 @@ Layout
   Apply it to an element inside a contenteditable="False" element in order to create an exception and make the element and its children editable.
 
 ``<a href=”#” />``
-  In Edit Mode, any link can be edited and styled. Using the “Link Modal” it’s also possible to replace it with a button.
+  En modo edición, cualquier link puede ser editado y se le puede dar estilos. Usando “Link Modal” también será posible reemplazarlo por un botón.
 
 Media
 -----
 ``<span class=”fa” />``
-  Pictogram elements. Editing this element will open the Pictogram library to replace the icon. It’s also possible to transform the elements using CSS.
+  Elementos pictograma(iconos). Editando este elemento se abre la librería para poder cambiar el icono. Es posible la modificación de estos elementos usando CSS.
 
 ``<img />``
-  Once clicked, the Image Library will open and you can replace images. Transformation is also possible for this kind of element.
+  Una vez clicado, se abrirá la librería y podrá cambiar las imagenes. La transformación también es posible en este tipo de elementos.
 
 .. code-block:: html
 
@@ -890,7 +890,7 @@ Media
     <iframe src="[your url]"/>
   </div>
 
-This html structure will create an ``<iframe>`` element editable by the publisher.
+Esta estructura html creará un elemento ``<iframe>`` editable por el usuario.
 
 
 
@@ -900,7 +900,7 @@ Buenas prácticas SEO
 Facilitar la inserción de contenido
 -----------------------------------
 
-Modern search engine algorithms increasingly focus on content, which means there is less focus on **keyword saturation** and more focus on whether or not the content is **actually relevant to the keywords**.
+Los nuevos algoritmos de los motores de búsqueda se centran cada vez más en el contenido, esto significa un menor enfoque en la **saturación de keywords** and more focus on whether or not the content is **actually relevant to the keywords**.
 
 As content is so important for SEO, you should concentrate on giving publishers the tools to easily insert it. It is important that your snippets are “content-responsive”, meaning that they should fit the publisher’s content regardless of size.
 
