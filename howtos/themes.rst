@@ -900,11 +900,11 @@ Buenas prácticas SEO
 Facilitar la inserción de contenido
 -----------------------------------
 
-Los nuevos algoritmos de los motores de búsqueda se centran cada vez más en el contenido, esto significa un menor enfoque en la **saturación de keywords** and more focus on whether or not the content is **actually relevant to the keywords**.
+Los nuevos algoritmos de los motores de búsqueda se centran cada vez más en el contenido, esto significa un menor enfoque en la **saturación de keywords** y se centra más si el contenido es o no **realmente relevante para las keywords**.
 
-As content is so important for SEO, you should concentrate on giving publishers the tools to easily insert it. It is important that your snippets are “content-responsive”, meaning that they should fit the publisher’s content regardless of size.
+Como el contenido es muy importante para el SEO, deberá concentrarse en dar a sus editores las herramientas para insertarlas facilmente. Es importante que sus snippets sean “content-responsive”, lo que significa que deben ajustarse al contenido independientemente de su tamaño.
 
-Let’s have a look to this example of a classic two column snippet, implemented in two different ways.
+Demos un vistazo a este ejemplo de un snippet clásico de dos columnas, implementado de dos maneras diferentes.
 
 
 .. container:: col-sm-7
